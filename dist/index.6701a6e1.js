@@ -25233,7 +25233,7 @@ class MainView extends _reactDefault.default.Component {
     }
     componentDidMount() {
         _axiosDefault.default.get("https://myflixapp1987.herokuapp.com/movies").then((response)=>{
-            the.setState({
+            this.setState({
                 movies: response.data
             });
         }).catch((error)=>{
