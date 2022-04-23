@@ -2,7 +2,7 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "Movie Database",
-  "main": "src/index.js",
+  "default": "src/index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/martinbd1/myFlix-client.git"
   },
-  "author": "",
+  "author": "Brian Martin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/martinbd1/myFlix-client/issues"
