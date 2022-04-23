@@ -1,3 +1,5 @@
+// src/components/login-view/login-view.jsx
+
 import React, { useState } from "react";
 
 export function LoginView(props) {
@@ -30,6 +32,9 @@ export function LoginView(props) {
           onChange={(e) => setPassword(e.target.value)}
         />
       </label>
+      <button type="registration" onClick={handleSubmit}>
+        Register
+      </button>
       <button type="submit" onClick={handleSubmit}>
         Submit
       </button>
