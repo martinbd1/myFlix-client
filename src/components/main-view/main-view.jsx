@@ -6,6 +6,8 @@ import axios from "axios";
 import { LoginView } from "../login-view/login-view";
 import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
+import { RegistrationView } from "../registration-view/registration-view";
+
 import { Container, Row, Col } from "react-bootstrap";
 
 export class MainView extends React.Component {
@@ -39,6 +41,12 @@ export class MainView extends React.Component {
     });
   }
 
+  // onRegistration(registered) {
+  //   this.setState({
+  //     registered,
+  //   });
+  // }
+
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
   onLoggedIn(user) {
     this.setState({
@@ -57,9 +65,6 @@ export class MainView extends React.Component {
 
     return (
       <Container>
-        <Row>
-          <NavbarView user={user} />
-        </Row>
         <Row className="main-view justify-content-md-center">
           {selectedMovie ? (
             <Col md={6}>
