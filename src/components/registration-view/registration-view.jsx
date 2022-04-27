@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Containter, Col, Row, Card, CardGroup } from "react-bootstrap";
+import { Form, Button, Container, Col, Row, Card, CardGroup } from "react-bootstrap";
 
 export function RegistrationView(props) {
   const [username, setUsername] = useState("");
@@ -20,7 +20,7 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Containter>
+    <Container>
       <Row>
         <Col>
           <CardGroup>
@@ -38,6 +38,7 @@ export function RegistrationView(props) {
                       required
                     />
                   </Form.Group>
+
                   <Form.Group>
                     <Form.Label>Password:</Form.Label>
                     <Form.Control
@@ -49,6 +50,7 @@ export function RegistrationView(props) {
                       required
                     />
                   </Form.Group>
+
                   <Form.Group>
                     <Form.Label>Email:</Form.Label>
                     <Form.Control
@@ -59,6 +61,7 @@ export function RegistrationView(props) {
                       required
                     />
                   </Form.Group>
+
                   <Form.Group>
                     <Form.Label>Birthday:</Form.Label>
                     <Form.Control
@@ -69,6 +72,7 @@ export function RegistrationView(props) {
                       required
                     />
                   </Form.Group>
+
                   <Button variant="primary" type="submit" onClick={handleSubmit}>
                     Submit
                   </Button>
@@ -78,7 +82,7 @@ export function RegistrationView(props) {
           </CardGroup>
         </Col>
       </Row>
-    </Containter>
+    </Container>
   );
 }
 
