@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { Form, Button, Containter, Col, Row, Card, CardGroup } from "react-bootstrap";
+import { Form, Button, Card, CardGroup, Container, Col, Row } from "react-bootstrap";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -17,7 +17,7 @@ export function LoginView(props) {
   };
 
   return (
-    <Containter>
+    <Container>
       <Row>
         <Col>
           <CardGroup>
@@ -30,7 +30,7 @@ export function LoginView(props) {
                     <Form.Control
                       type="text"
                       onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Enter you username"
+                      placeholder="Enter your username"
                     />
                   </Form.Group>
 
@@ -52,7 +52,7 @@ export function LoginView(props) {
           </CardGroup>
         </Col>
       </Row>
-    </Containter>
+    </Container>
   );
 }
 
