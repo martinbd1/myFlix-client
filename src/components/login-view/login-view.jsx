@@ -20,21 +20,29 @@ export function LoginView(props) {
     <Form>
       <Form.Group>
         <Form.Label>Username</Form.Label>
-        <Form.Contorl
+        <Form.Control
           type="text"
           onChange={(e) => setUsername(e.target.value)}
         />
       </Form.Group>
       <Form.Group>
         <Form.Label>Password</Form.Label>
-        <Form.Contorl
+        <Form.Control
           type="password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </Form.Group>
-      <Button variant="primary" type="submit" onClick={handlesubmit}>
+      <Button variant="primary" type="submit" onClick={handleSubmit}>
         Submit
       </Button>
     </Form>
   );
+}
+
+LoginView.propTypes = {
+  register: PropTypes.shape({
+      Username: PropTypes.string.isRequired,
+      Password: PropTypes.string.isRequired,
+  }),
+  onLoggedIn: PropTypes.func.isRequired
 }
