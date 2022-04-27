@@ -1,8 +1,8 @@
 // src/components/login-view/login-view.jsx
 
 import React, { useState } from "react";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import PropTypes from "prop-types";
+import { Form, Button, Containter, Col, Row, Card, CardGroup } from "react-bootstrap";
 
 export function LoginView(props) {
   const [username, setUsername] = useState("");
@@ -17,32 +17,49 @@ export function LoginView(props) {
   };
 
   return (
-    <Form>
-      <Form.Group>
-        <Form.Label>Username</Form.Label>
-        <Form.Control
-          type="text"
-          onChange={(e) => setUsername(e.target.value)}
-        />
-      </Form.Group>
-      <Form.Group>
-        <Form.Label>Password</Form.Label>
-        <Form.Control
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
-        Submit
-      </Button>
-    </Form>
+    <Containter>
+      <Row>
+        <Col>
+          <CardGroup>
+            <Card>
+              <Card.Body>
+                <Card.Title>Please Login</Card.Title>
+                <Form>
+                  <Form.Group>
+                    <Form.Label>Username:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      onChange={(e) => setUsername(e.target.value)}
+                      placeholder="Enter you username"
+                    />
+                  </Form.Group>
+
+                  <Form.Group>
+                    <Form.Label>Password:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      onChange={(e) => setPassword(e.target.value)}
+                      placeholder="Enter your password"
+                    />
+                  </Form.Group>
+
+                  <Button variant="primary" type="submit" onClick={handleSubmit}>
+                    Submit
+                  </Button>
+                </Form>
+              </Card.Body>
+            </Card>
+          </CardGroup>
+        </Col>
+      </Row>
+    </Containter>
   );
 }
 
 LoginView.propTypes = {
   register: PropTypes.shape({
-      Username: PropTypes.string.isRequired,
-      Password: PropTypes.string.isRequired,
+    Username: PropTypes.string.isRequired,
+    Password: PropTypes.string.isRequired,
   }),
-  onLoggedIn: PropTypes.func.isRequired
-}
+  onLoggedIn: PropTypes.func.isRequired,
+};
