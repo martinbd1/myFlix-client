@@ -1,13 +1,14 @@
 // src/components/movie-view/movie-view.jsx
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Button, Container, Col, Row, Card } from "react-bootstrap";
 
 export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
 
-    if (!movies) return null;
+    // if (!movies) return null;
 
     return (
       <Container>
