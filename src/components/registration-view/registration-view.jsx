@@ -1,4 +1,4 @@
-// src/components/regisrtation-view/registration-view.jsx
+// src/components/registration-view/registration-view.jsx
 
 import React, { useState } from "react";
 import PropTypes from "prop-types";
@@ -74,7 +74,7 @@ export function RegistrationView(props) {
                   </Form.Group>
 
                   <Button variant="primary" type="submit" onClick={handleSubmit}>
-                    Submit
+                    Register
                   </Button>
                 </Form>
               </Card.Body>
