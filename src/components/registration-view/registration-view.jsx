@@ -15,8 +15,8 @@ export function RegistrationView(props) {
     console.log(username, password);
     console.log(email, birthday);
     /* Send a request to the server for authentication */
-    /* then call props.onLoggedIn(username) */
-    props.onLoggedIn(username);
+    /* then call props.onRegistration(username) */
+    props.onRegistration(username);
   };
 
   return (
@@ -93,5 +93,5 @@ RegistrationView.propTypes = {
     Email: PropTypes.string.isRequired,
     Birthday: PropTypes.string.isRequired,
   }),
-  onLoggedIn: PropTypes.func.isRequired,
+  onRegistration: PropTypes.func.isRequired,
 };
