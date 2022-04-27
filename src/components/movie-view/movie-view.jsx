@@ -8,8 +8,6 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
 
-    if (!movies) return null;
-
     return (
       <Container>
         <Row>
