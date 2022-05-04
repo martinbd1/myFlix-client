@@ -70,7 +70,7 @@ export class MovieView extends React.Component {
   onRemoveFavorite = () => {
     const user = localStorage.getItem("user");
     const token = localStorage.getItem("token");
-    const id = this.props._id;
+    const id = this.props.movie._id;
     ///users/:Username/movies/:MovieID
     axios
       .delete(`https://myflixapp1987.herokuapp.com/users/${user}/movies/${id}`, {
@@ -133,5 +133,6 @@ MovieView.propTypes = {
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
     ImagePath: PropTypes.string.isRequired,
+    _id: PropTypes.string.isRequired,
   }).isRequired,
 };
