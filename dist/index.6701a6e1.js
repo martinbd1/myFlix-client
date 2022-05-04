@@ -40638,7 +40638,7 @@ class MovieView extends _reactDefault.default.Component {
     onRemoveFavorite = ()=>{
         const user = localStorage.getItem("user");
         const token = localStorage.getItem("token");
-        const id = this.props._id;
+        const id = this.props.movie._id;
         ///users/:Username/movies/:MovieID
         _axiosDefault.default.delete(`https://myflixapp1987.herokuapp.com/users/${user}/movies/${id}`, {
             headers: {
@@ -40786,7 +40786,8 @@ MovieView.propTypes = {
     movie: _propTypesDefault.default.shape({
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
-        ImagePath: _propTypesDefault.default.string.isRequired
+        ImagePath: _propTypesDefault.default.string.isRequired,
+        _id: _propTypesDefault.default.string.isRequired
     }).isRequired
 };
 
