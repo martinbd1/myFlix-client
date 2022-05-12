@@ -1,0 +1,11 @@
+<a href="https://www.flaticon.com/free-icons/film" title="film icons">Film icons created by Handicon - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/next" title="next icons">Next icons created by Pixel perfect - Flaticon</a>
+
+<a href="https://www.flaticon.com/free-icons/star" title="star icons">Star icons created by Pixel perfect - Flaticon</a>
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
