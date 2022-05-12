@@ -57,50 +57,52 @@ export function LoginView(props) {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CardGroup>
-            <Card>
-              <Card.Body>
-                <Card.Title>Please Login</Card.Title>
-                <Form>
-                  <Form.Group controlId="formUsername" className="reg-form-inputs">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      placeholder="Enter your username"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                    />
-                    {usernameErr && <p>{usernameErr}</p>}
-                  </Form.Group>
+    <Card>
+      <Card.Body>
+        <Card.Title>Log in to myFlix</Card.Title>
+        <Form>
+          <Form.Group controlId="formUsername" className="reg-form-inputs">
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            {usernameErr && <p>{usernameErr}</p>}
+          </Form.Group>
 
-                  <Form.Group controlId="formPassword" className="reg-form-inputs">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control
-                      type="password"
-                      placeholder="Enter your password"
-                      onChange={(e) => setPassword(e.target.value)}
-                    />
-                    {passwordErr && <p>{passwordErr}</p>}
-                  </Form.Group>
+          <Form.Group controlId="formPassword" className="reg-form-inputs">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="Enter your password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {passwordErr && <p>{passwordErr}</p>}
+          </Form.Group>
 
-                  <Button variant="primary" type="submit" onClick={handleSubmit}>
-                    Submit
-                  </Button>
-                </Form>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Col>
-      </Row>
-    </Container>
+          <Button
+            class="login-button"
+            variant="btn btn-primary col-md-5 mx-auto"
+            type="submit"
+            onClick={handleSubmit}>
+            Log in
+          </Button>
+
+          <div>
+            <p>
+              New Member? <a href="./register">Sign-up now!</a>
+            </p>
+          </div>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }
 
 LoginView.propTypes = {
-  register: PropTypes.shape({
+  login: PropTypes.shape({
     Username: PropTypes.string.isRequired,
     Password: PropTypes.string.isRequired,
   }),
