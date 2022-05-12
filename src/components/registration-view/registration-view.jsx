@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-import { Form, Button, Container, Col, Row, Card, CardGroup, FormGroup } from "react-bootstrap";
+import { Form, Button, Container, Col, Row, Card, CardGroup } from "react-bootstrap";
 
 import "./registration-view.scss";
 
@@ -71,76 +71,72 @@ export function RegistrationView(props) {
   };
 
   return (
-    <Container>
-      <Row>
-        <Col>
-          <CardGroup>
-            <Card>
-              <Card.Body>
-                <Card.Title>Please Register</Card.Title>
-                <Form>
-                  <Form.Group controlId="formUsername" className="reg-form-inputs">
-                    <Form.Label>Username:</Form.Label>
-                    <Form.Control
-                      type="text"
-                      value={username}
-                      onChange={(e) => setUsername(e.target.value)}
-                      placeholder="Enter a username"
-                      required
-                    />
-                    {usernameErr && <p>{usernameErr}</p>}
-                  </Form.Group>
+    <Card>
+      <Card.Body>
+        <Card.Title>Register for myFlix</Card.Title>
+        <Form>
+          <Form.Group controlId="formUsername" className="reg-form-inputs">
+            <Form.Label>Username:</Form.Label>
+            <Form.Control
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter a username"
+              required
+            />
+            {usernameErr && <p>{usernameErr}</p>}
+          </Form.Group>
 
-                  <Form.Group controlId="formPassword" className="reg-form-inputs">
-                    <Form.Label>Password:</Form.Label>
-                    <Form.Control
-                      type="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      minLength="8"
-                      placeholder="Your password must be 8 or more characters"
-                      required
-                    />
-                    {passwordErr && <p>{passwordErr}</p>}
-                  </Form.Group>
+          <Form.Group controlId="formPassword" className="reg-form-inputs">
+            <Form.Label>Password:</Form.Label>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              minLength="8"
+              placeholder="Your password must be 8 or more characters"
+              required
+            />
+            {passwordErr && <p>{passwordErr}</p>}
+          </Form.Group>
 
-                  <Form.Group controlId="Email" className="reg-form-inputs">
-                    <Form.Label>Email:</Form.Label>
-                    <Form.Control
-                      type="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email"
-                      required
-                    />
-                    {emailErr && <p>{emailErr}</p>}
-                  </Form.Group>
+          <Form.Group controlId="Email" className="reg-form-inputs">
+            <Form.Label>Email:</Form.Label>
+            <Form.Control
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Enter your email"
+              required
+            />
+            {emailErr && <p>{emailErr}</p>}
+          </Form.Group>
 
-                  <Form.Group controlId="updateBirthday" className="reg-form-inputs">
-                    <Form.Label>Birthday:</Form.Label>
-                    <Form.Control
-                      type="date"
-                      value={birthday}
-                      onChange={(e) => setBirthday(e.target.value)}
-                      placeholder="Enter your birthday yyyy/mm/dd"
-                      required
-                    />
-                  </Form.Group>
+          <Form.Group controlId="updateBirthday" className="reg-form-inputs">
+            <Form.Label>Birthday:</Form.Label>
+            <Form.Control
+              type="date"
+              value={birthday}
+              onChange={(e) => setBirthday(e.target.value)}
+              placeholder="Enter your birthday"
+              required
+            />
+          </Form.Group>
 
-                  <Button variant="primary" type="submit" onClick={handleSubmit}>
-                    Register
-                  </Button>
-                  {/* 
-                  
-                    <Link to={`/`}>Already registered? Sign-in here!</Link>
-                  */}
-                </Form>
-              </Card.Body>
-            </Card>
-          </CardGroup>
-        </Col>
-      </Row>
-    </Container>
+          <stack>
+            <Button variant="btn btn-primary col-md-5 mx-auto" type="submit" onClick={handleSubmit}>
+              Register
+            </Button>
+
+            <div>
+              <p>
+                Already registered? <a href={`/`}>Log in here!</a>
+              </p>
+            </div>
+          </stack>
+        </Form>
+      </Card.Body>
+    </Card>
   );
 }
 
