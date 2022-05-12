@@ -1,5 +1,13 @@
-$color: steelblue;
+body {
+  background-color: #6c8884 !important;
+}
 
-.my-flix {
-  color: $color;
+// input {
+//   border: none !important;
+//   border-radius: 0 !important;
+// }
+
+button {
+  border: none !important;
+  border-radius: 0 !important;
 }
