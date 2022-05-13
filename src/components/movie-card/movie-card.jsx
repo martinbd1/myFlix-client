@@ -12,20 +12,19 @@ export class MovieCard extends React.Component {
     const { movie } = this.props;
 
     return (
-      <Container>
+      <Container className="movie-card">
         <CardGroup>
-          <Card>
-            <Link to={`/movies/${movie._id}`}>
-              <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
-            </Link>
-            <Card.Body>
-              <Card.Title>{movie.Title}</Card.Title>
-              <Card.Text>{movie.Description}</Card.Text>
+          <Link to={`/movies/${movie._id}`}>
+            <Card>
               <Link to={`/movies/${movie._id}`}>
-                <Button variant="link">Open</Button>
+                <Card.Img variant="top" src={movie.ImagePath} crossOrigin="anonymous" />
               </Link>
-            </Card.Body>
-          </Card>
+              <Card.Body>
+                <Card.Title className="movie-card-title">{movie.Title}</Card.Title>
+                {/* <Card.Text>{movie.Description}</Card.Text> */}
+              </Card.Body>
+            </Card>
+          </Link>
         </CardGroup>
       </Container>
     );
