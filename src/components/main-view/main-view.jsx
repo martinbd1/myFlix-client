@@ -121,6 +121,7 @@ class MainView extends React.Component {
             />
 
             <Route
+              exact
               path="/movies/:movieId"
               render={({ match, history }) => {
                 if (!user)
@@ -146,6 +147,7 @@ class MainView extends React.Component {
             />
 
             <Route
+              exact
               path="/directors/:name"
               render={({ match, history }) => {
                 if (!user)
@@ -170,6 +172,7 @@ class MainView extends React.Component {
             />
 
             <Route
+              exact
               path="/genres/:name"
               render={({ match, history }) => {
                 if (!user)
@@ -194,6 +197,7 @@ class MainView extends React.Component {
             />
 
             <Route
+              exact
               path="/users/:username"
               render={({ history }) => {
                 if (!user)
