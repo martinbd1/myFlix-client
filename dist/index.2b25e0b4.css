@@ -15,16 +15,52 @@
   display: inline;
 }
 
+.movie-button {
+  margin: 10pt 10px;
+  padding: 10px 15px !important;
+  font-size: 20px !important;
+  transition-duration: .4s !important;
+}
+
+.login-button {
+  margin: 20px;
+  padding: 15px 20px !important;
+  font-size: 20px !important;
+  transition-duration: .4s !important;
+}
+
+.log-form-inputs {
+  margin: 5pt 0;
+}
+
+.register-button {
+  margin: 20px;
+  padding: 15px 20px !important;
+  font-size: 20px !important;
+  transition-duration: .4s !important;
+}
+
+.reg-form-inputs {
+  margin: 5pt 0;
+}
 
 
 
 
 
+.profile-button {
+  margin: 10px;
+  padding: 15px 20px !important;
+  font-size: 20px !important;
+  transition-duration: .4s !important;
+}
 
+.pro-form-inputs {
+  margin: 10pt 0 !important;
+}
 
-
-.card, .btn, .form-control {
-  border-radius: 0;
+.profile-movie-card {
+  margin: 20px 0;
 }
 
 .main-nav {
@@ -38,22 +74,33 @@
 }
 
 .main-nav :hover {
-  color: #079cc6 !important;
+  color: #49a4bd !important;
 }
 
 .navbar-logo {
   font-family: Oleo Script, cursive !important;
+  display: inline !important;
 }
 
+.movie-card {
+  margin: 10pt 0;
+  padding: 0;
+}
 
+.movie-card-title {
+  text-align: center;
+}
+
+a:link {
+  color: #000;
+}
+
+a:hover {
+  color: #49a4bd;
+}
 
 body {
   background-color: #6c8884 !important;
-}
-
-button {
-  border: none !important;
-  border-radius: 0 !important;
 }
 
 /*# sourceMappingURL=index.2b25e0b4.css.map */
