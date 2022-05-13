@@ -59,9 +59,11 @@ export function LoginView(props) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Log in to myFlix</Card.Title>
+        <Card.Title>
+          <h1>Log in to myFlix</h1>
+        </Card.Title>
         <Form>
-          <Form.Group controlId="formUsername" className="reg-form-inputs">
+          <Form.Group controlId="formUsername" className="log-form-inputs">
             <Form.Label>Username:</Form.Label>
             <Form.Control
               type="text"
@@ -72,7 +74,7 @@ export function LoginView(props) {
             {usernameErr && <p>{usernameErr}</p>}
           </Form.Group>
 
-          <Form.Group controlId="formPassword" className="reg-form-inputs">
+          <Form.Group controlId="formPassword" className="log-form-inputs">
             <Form.Label>Password:</Form.Label>
             <Form.Control
               type="password"
@@ -83,7 +85,7 @@ export function LoginView(props) {
           </Form.Group>
 
           <Button
-            class="login-button"
+            className="login-button"
             variant="btn btn-primary col-md-5 mx-auto"
             type="submit"
             onClick={handleSubmit}>
