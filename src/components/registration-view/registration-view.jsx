@@ -73,7 +73,9 @@ export function RegistrationView(props) {
   return (
     <Card>
       <Card.Body>
-        <Card.Title>Register for myFlix</Card.Title>
+        <Card.Title>
+          <h1>Register for myFlix</h1>
+        </Card.Title>
         <Form>
           <Form.Group controlId="formUsername" className="reg-form-inputs">
             <Form.Label>Username:</Form.Label>
@@ -124,7 +126,11 @@ export function RegistrationView(props) {
           </Form.Group>
 
           <stack>
-            <Button variant="btn btn-primary col-md-5 mx-auto" type="submit" onClick={handleSubmit}>
+            <Button
+              className="register-button"
+              variant="btn btn-primary col-md-5 mx-auto"
+              type="submit"
+              onClick={handleSubmit}>
               Register
             </Button>
 
