@@ -168,13 +168,15 @@ export class ProfileView extends React.Component {
           <Col>
             <Card>
               <Card.Body>
-                <Card.Title>Profile</Card.Title>
+                <Card.Title>
+                  <h1>User Profile</h1>
+                </Card.Title>
                 <Form
                   className="update-form"
                   onSubmit={(e) =>
                     this.editUser(e, this.Username, this.Password, this.Email, this.Birthday)
                   }>
-                  <Form.Group>
+                  <Form.Group className="pro-form-inputs">
                     <Form.Label>Username:</Form.Label>
                     <FormControl
                       type="text"
@@ -186,7 +188,7 @@ export class ProfileView extends React.Component {
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="pro-form-inputs">
                     <Form.Label>Password:</Form.Label>
                     <FormControl
                       type="password"
@@ -198,7 +200,7 @@ export class ProfileView extends React.Component {
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="pro-form-inputs">
                     <Form.Label>Email:</Form.Label>
                     <FormControl
                       type="email"
@@ -210,7 +212,7 @@ export class ProfileView extends React.Component {
                     />
                   </Form.Group>
 
-                  <Form.Group>
+                  <Form.Group className="pro-form-inputs">
                     <Form.Label>Birthday:</Form.Label>
                     <FormControl
                       type="{date}"
@@ -222,10 +224,18 @@ export class ProfileView extends React.Component {
                   </Form.Group>
 
                   <div>
-                    <Button variant="primary" type="submit" onClick={this.editUser}>
+                    <Button
+                      className="profile-button"
+                      variant="primary"
+                      type="submit"
+                      onClick={this.editUser}>
                       Update Profile
                     </Button>
-                    <Button variant="danger" type="submit" onClick={() => this.onDeleteUser()}>
+                    <Button
+                      className="profile-button"
+                      variant="danger"
+                      type="submit"
+                      onClick={() => this.onDeleteUser()}>
                       Delete Profile
                     </Button>
                   </div>
@@ -237,7 +247,7 @@ export class ProfileView extends React.Component {
 
         <Row>
           <Col>
-            <Card>
+            <Card className="profile-movie-card">
               <Card.Body>
                 {FavoriteMovies.length === 0 && (
                   <div className="text-center">No favorite movies!</div>
