@@ -38881,6 +38881,7 @@ LoginView.propTypes = {
     }),
     onLoggedIn: _propTypesDefault.default.func.isRequired
 };
+exports.default = LoginView;
 var _c;
 $RefreshReg$(_c, "LoginView");
 
@@ -39182,8 +39183,10 @@ RegistrationView.propTypes = {
         Password: _propTypesDefault.default.string.isRequired,
         Email: _propTypesDefault.default.string.isRequired,
         Birthday: _propTypesDefault.default.instanceOf(Date).isRequired
-    })
+    }),
+    onLoggedIn: _propTypesDefault.default.func.isRequired
 };
+exports.default = RegistrationView;
 var _c;
 $RefreshReg$(_c, "RegistrationView");
 
@@ -39900,6 +39903,8 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 // src/components/navbar-view/navbar-view.jsx
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
 var _reactBootstrap = require("react-bootstrap");
 var _reactRouterDom = require("react-router-dom");
 var _movieFilmGrd1Png = require("../../../img/movie-film-grd1.png");
@@ -39932,21 +39937,21 @@ function NavbarView({ user  }) {
                         alt: "logo"
                     }, void 0, false, {
                         fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 30,
+                        lineNumber: 31,
                         columnNumber: 9
                     }, this),
                     " myFlix"
                 ]
             }, void 0, true, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 29,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Toggle, {
                 "aria-controls": "responsive-navbar-nav"
             }, void 0, false, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 32,
+                lineNumber: 33,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
@@ -39959,7 +39964,7 @@ function NavbarView({ user  }) {
                             children: user
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 24
                         }, this),
                         isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
@@ -39970,7 +39975,7 @@ function NavbarView({ user  }) {
                             children: "Logout"
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 37,
+                            lineNumber: 38,
                             columnNumber: 13
                         }, this),
                         !isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -39978,7 +39983,7 @@ function NavbarView({ user  }) {
                             children: "Log in"
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 25
                         }, this),
                         !isAuth() && /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
@@ -39986,28 +39991,32 @@ function NavbarView({ user  }) {
                             children: "Sign-Up"
                         }, void 0, false, {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 46,
+                            lineNumber: 47,
                             columnNumber: 25
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/navbar-view/navbar-view.jsx",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 33,
+                lineNumber: 34,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/navbar-view/navbar-view.jsx",
-        lineNumber: 28,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }
 _c = NavbarView;
+NavbarView.propTypes = {
+    user: _propTypesDefault.default.string
+};
+exports.default = NavbarView;
 var _c;
 $RefreshReg$(_c, "NavbarView");
 
@@ -40016,7 +40025,7 @@ $RefreshReg$(_c, "NavbarView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","../../../img/movie-film-grd1.png":"akXMk","./navbar-view.scss":"cYTZj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"akXMk":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","../../../img/movie-film-grd1.png":"akXMk","./navbar-view.scss":"cYTZj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","prop-types":"7wKI2"}],"akXMk":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('byUka') + "movie-film-grd1.c795db3f.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"cYTZj":[function() {},{}],"bPxKK":[function(require,module,exports) {
