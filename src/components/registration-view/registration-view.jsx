@@ -147,4 +147,7 @@ RegistrationView.propTypes = {
     Email: PropTypes.string.isRequired,
     Birthday: PropTypes.instanceOf(Date).isRequired,
   }),
+  onLoggedIn: PropTypes.func.isRequired,
 };
+
+export default RegistrationView;
