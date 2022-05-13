@@ -1,0 +1,59 @@
+
+
+.title-row h1 {
+  display: inline;
+}
+
+.title-row img {
+  width: 36px;
+  height: auto;
+  padding-bottom: 16pt;
+  display: inline;
+}
+
+.director-row, .genre-row {
+  display: inline;
+}
+
+
+
+
+
+
+
+
+
+.card, .btn, .form-control {
+  border-radius: 0;
+}
+
+.main-nav {
+  max-width: "100%" !important;
+  background-color: #231f20 !important;
+}
+
+.main-nav * {
+  transition: all .8s;
+  color: #f6f9e4 !important;
+}
+
+.main-nav :hover {
+  color: #079cc6 !important;
+}
+
+.navbar-logo {
+  font-family: Oleo Script, cursive !important;
+}
+
+
+
+body {
+  background-color: #6c8884 !important;
+}
+
+button {
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+/*# sourceMappingURL=index.2b25e0b4.css.map */
