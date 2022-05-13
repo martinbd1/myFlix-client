@@ -1,7 +1,7 @@
 // src/components/navbar-view/navbar-view.jsx
 
 import React from "react";
-import { Button, Container, Navbar, Nav } from "react-bootstrap";
+import { Button, Container, Navbar, Nav, Link } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/movie-film-grd1.png";
 
@@ -32,7 +32,7 @@ export function NavbarView({ user }) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="ml-auto">
-          {isAuth() && <Nav.Link href={`/users/${user}`}>{user}</Nav.Link>}
+          {isAuth() && <Link href={`/users/${user}`}>{user}</Link>}
           {isAuth() && (
             <Button
               variant="link"
