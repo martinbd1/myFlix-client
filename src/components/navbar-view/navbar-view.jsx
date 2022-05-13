@@ -1,6 +1,7 @@
 // src/components/navbar-view/navbar-view.jsx
 
 import React from "react";
+import PropTypes from "prop-types";
 import { Button, Container, Navbar, Nav, Link } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Logo from "../../../img/movie-film-grd1.png";
@@ -49,3 +50,9 @@ export function NavbarView({ user }) {
     </Navbar>
   );
 }
+
+NavbarView.propTypes = {
+  user: PropTypes.string,
+};
+
+export default NavbarView;
