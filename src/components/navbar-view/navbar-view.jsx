@@ -28,7 +28,9 @@ export function NavbarView({ user }) {
   return (
     <Navbar className="main-nav mx-auto" sticky="top" expand="lg">
       <Navbar.Brand className="navbar-logo" href="/">
-        <img src={Logo} width="40" height="auto" className="img-responsive" alt="logo" /> myFlix
+        <h2>
+          <img src={Logo} width="52" height="auto" className="img-responsive" alt="logo" /> myFlix
+        </h2>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
