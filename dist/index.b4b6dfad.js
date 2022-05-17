@@ -28797,7 +28797,7 @@ class MainView extends _reactDefault.default.Component {
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 exact: true,
                                 path: "/register",
-                                render: (match)=>{
+                                render: ()=>{
                                     if (user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Redirect, {
                                         to: "/"
                                     }, void 0, false, void 0, void 0);
