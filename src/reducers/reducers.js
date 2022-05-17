@@ -50,13 +50,13 @@ function favorites(state = [], action) {
     switch (action.type) {
         case SET_FAV:
             console.log('SET_FAV reducer reached');
-            return action.value;
+            return [...action.value];
         case ADD_FAV:
             console.log('ADD_FAV reducer reached');
-            return action.value;
+            return [...state, action.value];
         case REM_FAV:
             console.log('REM_FAV reducer reached');
-            return action.value;
+            return state.filter((id) => id !== action.value);
         default:
             return state;
     }
