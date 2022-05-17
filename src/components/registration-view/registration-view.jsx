@@ -128,7 +128,7 @@ export function RegistrationView(props) {
           <stack>
             <Button
               className="register-button"
-              variant="btn btn-primary col-md-5 mx-auto"
+              variant="btn btn-primary"
               type="submit"
               onClick={handleSubmit}>
               Register
