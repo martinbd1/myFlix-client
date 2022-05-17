@@ -23,6 +23,7 @@ import MoviesList from "../movies-list/movies-list";
 class MainView extends React.Component {
   constructor() {
     super();
+    this.getFav = this.getFav.bind(this);
   }
 
   getMovies(token) {
@@ -33,6 +34,10 @@ class MainView extends React.Component {
       .then((response) => {
         // Assign the result to the state
         this.props.setMovies(response.data);
+
+        this.props.setDirect(directors);
+
+        this.props.setGenres(genre);
       })
       .catch(function (error) {
         console.log(error);
@@ -110,7 +115,7 @@ class MainView extends React.Component {
             <Route
               exact
               path="/register"
-              render={() => {
+              render={(match) => {
                 if (user) return <Redirect to="/" />;
                 return (
                   <Col md={8}>
