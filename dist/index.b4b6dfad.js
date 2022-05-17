@@ -28531,13 +28531,19 @@ function favorites(state = [], action) {
     switch(action.type){
         case _actions.SET_FAV:
             console.log('SET_FAV reducer reached');
-            return action.value;
+            return [
+                ...action.value
+            ];
         case _actions.ADD_FAV:
             console.log('ADD_FAV reducer reached');
-            return action.value;
+            return [
+                ...state,
+                action.value
+            ];
         case _actions.REM_FAV:
             console.log('REM_FAV reducer reached');
-            return action.value;
+            return state.filter((id)=>id !== action.value
+            );
         default:
             return state;
     }
@@ -28701,6 +28707,7 @@ var _moviesListDefault = parcelHelpers.interopDefault(_moviesList);
 class MainView extends _reactDefault.default.Component {
     constructor(){
         super();
+        this.getFav = this.getFav.bind(this);
     }
     getMovies(token) {
         _axiosDefault.default.get("https://myflixapp1987.herokuapp.com/movies", {
@@ -28710,6 +28717,8 @@ class MainView extends _reactDefault.default.Component {
         }).then((response)=>{
             // Assign the result to the state
             this.props.setMovies(response.data);
+            this.props.setDirect(directors);
+            this.props.setGenres(genre);
         }).catch(function(error) {
             console.log(error);
         });
@@ -28756,7 +28765,7 @@ class MainView extends _reactDefault.default.Component {
                     user: user1
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 91,
+                    lineNumber: 96,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
@@ -28782,13 +28791,13 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 95,
+                                lineNumber: 100,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
                                 exact: true,
                                 path: "/register",
-                                render: ()=>{
+                                render: (match)=>{
                                     if (user1) return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Redirect, {
                                         to: "/"
                                     }, void 0, false, void 0, void 0);
@@ -28799,7 +28808,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 110,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28830,7 +28839,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 123,
+                                lineNumber: 128,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28860,7 +28869,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 149,
+                                lineNumber: 154,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28890,7 +28899,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 174,
+                                lineNumber: 179,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28918,7 +28927,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 199,
+                                lineNumber: 204,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28946,7 +28955,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 224,
+                                lineNumber: 229,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -28965,24 +28974,24 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 249,
+                                lineNumber: 254,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 94,
+                        lineNumber: 99,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 93,
+                    lineNumber: 98,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 90,
+            lineNumber: 95,
             columnNumber: 7
         }, this);
     }
@@ -38250,35 +38259,29 @@ class MovieView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                     className: "director-row",
                                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h5", {
-                                            children: [
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 109,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("b", {
-                                                    children: "Director: "
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 110,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                                    to: `/directors/${movie.Director.Name}`,
-                                                    children: movie.Director.Name
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 111,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 108,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("br", {}, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 108,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("b", {
+                                                children: "Director: "
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 109,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: `/directors/${movie.Director.Name}`,
+                                                children: movie.Director.Name
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 110,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
                                         lineNumber: 107,
                                         columnNumber: 17
@@ -38291,37 +38294,31 @@ class MovieView extends _reactDefault.default.Component {
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
                                     className: "genre-row",
                                     children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("p", {
-                                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h5", {
-                                            children: [
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV("b", {
-                                                    children: "Genre: "
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 118,
-                                                    columnNumber: 21
-                                                }, this),
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
-                                                    to: `/genres/${movie.Genre.Name}`,
-                                                    children: movie.Genre.Name
-                                                }, void 0, false, {
-                                                    fileName: "src/components/movie-view/movie-view.jsx",
-                                                    lineNumber: 119,
-                                                    columnNumber: 21
-                                                }, this)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 117,
-                                            columnNumber: 19
-                                        }, this)
-                                    }, void 0, false, {
+                                        children: [
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV("b", {
+                                                children: "Genre: "
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 115,
+                                                columnNumber: 19
+                                            }, this),
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Link, {
+                                                to: `/genres/${movie.Genre.Name}`,
+                                                children: movie.Genre.Name
+                                            }, void 0, false, {
+                                                fileName: "src/components/movie-view/movie-view.jsx",
+                                                lineNumber: 116,
+                                                columnNumber: 19
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "src/components/movie-view/movie-view.jsx",
-                                        lineNumber: 116,
+                                        lineNumber: 114,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 115,
+                                    lineNumber: 113,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -38335,7 +38332,7 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Add to favorites"
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 124,
+                                            lineNumber: 120,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
@@ -38347,13 +38344,13 @@ class MovieView extends _reactDefault.default.Component {
                                             children: "Back"
                                         }, void 0, false, {
                                             fileName: "src/components/movie-view/movie-view.jsx",
-                                            lineNumber: 132,
+                                            lineNumber: 128,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/components/movie-view/movie-view.jsx",
-                                    lineNumber: 123,
+                                    lineNumber: 119,
                                     columnNumber: 15
                                 }, this)
                             ]
@@ -38381,17 +38378,17 @@ class MovieView extends _reactDefault.default.Component {
                             crossOrigin: "anonymous"
                         }, void 0, false, {
                             fileName: "src/components/movie-view/movie-view.jsx",
-                            lineNumber: 147,
+                            lineNumber: 143,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 146,
+                        lineNumber: 142,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/movie-view/movie-view.jsx",
-                    lineNumber: 145,
+                    lineNumber: 141,
                     columnNumber: 9
                 }, this)
             ]
@@ -38847,7 +38844,7 @@ function LoginView(props) {
                         }, this),
                         /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
                             className: "login-button",
-                            variant: "btn btn-primary col-md-5 mx-auto",
+                            variant: "btn btn-primary",
                             type: "submit",
                             onClick: handleSubmit,
                             children: "Log in"
@@ -39151,7 +39148,7 @@ function RegistrationView(props) {
                             children: [
                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Button, {
                                     className: "register-button",
-                                    variant: "btn btn-primary col-md-5 mx-auto",
+                                    variant: "btn btn-primary",
                                     type: "submit",
                                     onClick: handleSubmit,
                                     children: "Register"
