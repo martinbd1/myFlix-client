@@ -105,19 +105,15 @@ export class MovieView extends React.Component {
               <Card.Text>{movie.Description}</Card.Text>
               <div className="director-row">
                 <p>
-                  <h5>
-                    <br></br>
-                    <b>Director: </b>
-                    <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link>
-                  </h5>
+                  <br></br>
+                  <b>Director: </b>
+                  <Link to={`/directors/${movie.Director.Name}`}>{movie.Director.Name}</Link>
                 </p>
               </div>
               <div className="genre-row">
                 <p>
-                  <h5>
-                    <b>Genre: </b>
-                    <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
-                  </h5>
+                  <b>Genre: </b>
+                  <Link to={`/genres/${movie.Genre.Name}`}>{movie.Genre.Name}</Link>
                 </p>
               </div>
               <div>
