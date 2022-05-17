@@ -18,15 +18,12 @@
 .movie-button {
   margin: 10pt 10px;
   padding: 10px 15px !important;
-  font-size: 20px !important;
   transition-duration: .4s !important;
 }
 
 .login-button {
   margin: 20px;
-  padding: 15px 20px !important;
-  font-size: 20px !important;
-  transition-duration: .4s !important;
+  padding: 10px 30px !important;
 }
 
 .log-form-inputs {
@@ -35,9 +32,7 @@
 
 .register-button {
   margin: 20px;
-  padding: 15px 20px !important;
-  font-size: 20px !important;
-  transition-duration: .4s !important;
+  padding: 10px 30px !important;
 }
 
 .reg-form-inputs {
@@ -50,9 +45,7 @@
 
 .profile-button {
   margin: 10px;
-  padding: 15px 20px !important;
-  font-size: 20px !important;
-  transition-duration: .4s !important;
+  padding: 10px 20px !important;
 }
 
 .pro-form-inputs {
