@@ -13,13 +13,13 @@ https://github.com/martinbd1/movie_api
 
 ## Tools Used
 
-*React
-*Redux
-*React Bootstrap
-*SASS
-*Javascript
-*ES6
-*Axios
+* React
+* Redux
+* React Bootstrap
+* SASS
+* Javascript
+* ES6
+* Axios
 
 
 
