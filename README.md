@@ -6,7 +6,7 @@ Using React, built the client-side for an application called myFlix based on its
 
 ## Overview
 
-The application was built with the MERN (MongoDB, Express, React, Node) stack. The application allows users to register/login and view a database of movies and additional information, such as genre and director etc, and to add and remove movies from a favorites list. 
+The application was built with the MERN (MongoDB, Express, React, Node) stack. This is the frontend component of a “movies” web application. The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.
 
 This repo is the front end of the application. The backend of the application can be found here:
 https://github.com/martinbd1/movie_api
